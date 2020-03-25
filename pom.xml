@@ -4,22 +4,48 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+  <groupId>pruebawebapp</groupId>
   <artifactId>pruebawebapp</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>war</packaging>
 
-  <name>pruebawebapp Maven Webapp</name>
-  <!-- FIXME change it to the project's website -->
+  <name>pruebawebapp</name>
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+
+    <nexus-id>localNexus</nexus-id>
+    <nexus-url>http://172.19.0.1:8081</nexus-url>
+    <nexus-releases-url>${nexus-url}/repository/maven-releases/</nexus-releases-url>
   </properties>
 
+  <distributionManagement>
+    <repository>
+      <id>${nexus-id}</id>
+      <url>${nexus-releases-url}</url>
+    </repository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>${nexus-id}</id>
+      <url>${nexus-releases-url}</url>
+    </repository>
+  </repositories>
+
   <dependencies>
+    <!-- Api para JEE  JAVA 8 -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>8.0</version>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
