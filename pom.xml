@@ -6,7 +6,7 @@
 
   <groupId>pruebawebapp</groupId>
   <artifactId>pruebawebapp</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
   <packaging>war</packaging>
 
   <name>pruebawebapp</name>
@@ -56,7 +56,7 @@
     <dependency>
       <groupId>pruebajar</groupId>
       <artifactId>pruebajar</artifactId>
-      <version>1.0</version>
+      <version>1.0.2</version>
     </dependency>
   </dependencies>
 
